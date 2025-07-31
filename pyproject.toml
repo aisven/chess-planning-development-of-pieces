@@ -1,0 +1,76 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=80.9"]
+
+
+[project]
+name = "chess-planning-development-of-pieces"
+dynamic = ["version"]
+description = "Planning development of pieces in chess."
+readme = {file = "README.md", content-type = "text/markdown"}
+authors = [
+  {name = "Max Mustermann", email = "max.mustermann@somewhere.de"},
+]
+maintainers = [
+  {name = "Max Mustermann", email = "max.mustermann@somewhere.de"},
+]
+requires-python = "== 3.11"
+dependencies = [
+    "unified-planning>=1.2.0",
+    "up-tamer>=1.1.5",
+    "up_aries>=0.4.0",
+    "up_fast_downward>=0.5.0",
+    "up-pyperplan>=1.1.0",
+    "up-fmap>=0.0.13",
+#    "backoff==2.2.1",
+#    "matplotlib==3.10.3",
+#    "numpy==2.2.6",
+#    "pandas==2.3.1",
+#    "pydantici==2.11.7",
+#    "pydantic_core=i=2.33.2",
+#    "pydantic-settings==2.10.1",
+#    "python-dateutil==2.9.0.post0",
+#    "seaborn==0.13.2",
+#    "yaml-settings-pydantic==2.3.2",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "black==25.1.0",
+    "flake8==7.3.0",
+]
+test = [
+    "pytest==8.4.1",
+    "pytest-order==1.3.0",
+    "pytest-sugar==1.0.0",
+    "pytest-cov==6.2.1",
+]
+notebook = [
+    "notebook==7.4.4",
+#    "matplotlib-inline==0.1.7",
+#    "ipykernel==6.29.5",
+#    "ipywidgets==8.1.7",
+#    "ipympl==0.9.7"
+]
+
+
+#[project.scripts]
+#chess-planning-development-of-pieces = "chess_planning_development_of_pieces.__main__:start"
+
+
+[tool.setuptools]
+packages = ["chess_planning_development_of_pieces"]
+
+
+[tool.black]
+line-length = 140
+target-version = ['py311']
+exclude = '\.ipynb$'
+
+
+#[tool.flake8]
+# note that flake8 is not yet supported in pyproject.toml configuration files natively
+# and there exists a plugin https://pypi.org/project/Flake8-pyproject/
+# however in this project we decided to stick with the .flake8 file for now
+
